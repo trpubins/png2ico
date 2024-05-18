@@ -1,0 +1,10 @@
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+ignore = ["E402", "E203"]
+extend-select = ["E501"]
+
+[tool.black]
+# List ignore rules or any rules you'd like to add
+
