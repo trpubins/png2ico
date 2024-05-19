@@ -19,3 +19,11 @@ This project uses `black` to format code and `ruff` to lint. Run the following t
 ```bash
 make format
 ```
+
+### Unit Tests
+
+This project leverages `pytest` for unit testing. Run the following command to run all unit tests:
+
+```bash
+make test
+```
