@@ -6,10 +6,12 @@ from topshelfsoftware_util.io import cdtmp
 from topshelfsoftware_util.log import get_logger
 
 from conftest import get_json_files
+
 # ----------------------------------------------------------------------------#
 #                               --- Globals ---                               #
 # ----------------------------------------------------------------------------#
 from __setup__ import TEST_EVENTS_PATH, TEST_FILES_PATH
+
 MODULE = "image_converter"
 
 # ----------------------------------------------------------------------------#
@@ -21,6 +23,7 @@ logger = get_logger(f"test_{MODULE}")
 #                           --- Lambda Imports ---                            #
 # ----------------------------------------------------------------------------#
 from src.image_converter import convert_png2ico
+
 
 # ----------------------------------------------------------------------------#
 #                                --- TESTS ---                                #
@@ -34,4 +37,3 @@ def test_01_convert_png2ico(get_event_as_dict):
         ico_fp = convert_png2ico(png_fp)
         logger.info(f"Asserting ICO file '{ico_fp}' exists")
         assert os.path.exists(ico_fp)
-        

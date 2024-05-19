@@ -5,6 +5,7 @@ from typing import Generator
 
 import pytest
 from topshelfsoftware_util.log import get_logger
+
 # ----------------------------------------------------------------------------#
 #                               --- Globals ---                               #
 # ----------------------------------------------------------------------------#
@@ -16,12 +17,12 @@ FILE_DELIMITER = "_"
 MODULE = "conftest"
 logger = get_logger(f"test_{MODULE}")
 
+
 # ----------------------------------------------------------------------------#
 #                                 --- MAIN ---                                #
 # ----------------------------------------------------------------------------#
 @pytest.fixture
-def get_event_as_dict(event_dir: str, event_file: str) \
-    -> Generator[dict, None, None]:
+def get_event_as_dict(event_dir: str, event_file: str) -> Generator[dict, None, None]:
     """Read a JSON-formatted file into a Python dictionary."""
     event_fp = os.path.join(event_dir, event_file)
     event = convert_json_to_dict(event_fp)
@@ -29,8 +30,7 @@ def get_event_as_dict(event_dir: str, event_file: str) \
 
 
 @pytest.fixture
-def get_event_as_str(event_dir: str, event_file: str) \
-    -> Generator[str, None, None]:
+def get_event_as_str(event_dir: str, event_file: str) -> Generator[str, None, None]:
     """Read a JSON-formatted file into a Python string."""
     event_fp = os.path.join(event_dir, event_file)
     logger.info(f"reading JSON file {event_file} into string")

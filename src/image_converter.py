@@ -4,10 +4,12 @@ import os
 from PIL import Image
 
 from topshelfsoftware_util.log import get_logger
+
 # ----------------------------------------------------------------------------#
 #                               --- Logging ---                               #
 # ----------------------------------------------------------------------------#
 logger = get_logger(__name__, level=logging.INFO)
+
 
 # --------------------------------------------------------------------------- #
 #                                --- MAIN ---                                 #
@@ -15,7 +17,14 @@ logger = get_logger(__name__, level=logging.INFO)
 def convert_png2ico(
     png_fp: str,
     output_dir: str = "output",
-    icon_sizes: list[tuple] = [(16, 16), (32, 32), (48, 48), (64, 64), (128, 128), (256, 256)],
+    icon_sizes: list[tuple] = [
+        (16, 16),
+        (32, 32),
+        (48, 48),
+        (64, 64),
+        (128, 128),
+        (256, 256),
+    ],
 ) -> str:
     """
     Convert a PNG image to ICO format with multiple icon sizes.
@@ -24,15 +33,15 @@ def convert_png2ico(
     ----------
     png_fp: str
         Path to the input PNG file.
-    
+
     output_dir: str, Optional
         Directory to save the output ICO file.
         Default is './output/".
-    
+
     icon_sizes: list[tuple], Optional
         List of sizes to store in the ICO file.
         Default is all of the following: 16x16, 32x32, 48x48, 64x64, 128x128, and 256x256.
-    
+
     Returns
     ----------
     str
@@ -49,9 +58,9 @@ def convert_png2ico(
     # Create the output dir as needed
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    
+
     # Save the image as ICO file with the specified sizes
     logger.info(f"Saving ICO to '{ico_fn}' dir with the following sizes: {icon_sizes}")
     img.save(ico_fn, format="ICO", sizes=icon_sizes)
-    
+
     return ico_fn
