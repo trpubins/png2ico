@@ -37,3 +37,7 @@ clean:
 format:
 	$(VENV_DIR)/bin/$(PYTHON) -m black $(PROJ_ROOT_DIR)
 	$(VENV_DIR)/bin/$(PYTHON) -m ruff check $(PROJ_ROOT_DIR)
+
+# Run unit tests with coverage
+test:
+	$(VENV_DIR)/bin/$(PYTHON) -m pytest --cov=$(PROJ_ROOT_DIR)/src -s -v
