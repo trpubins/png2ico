@@ -1,0 +1,5 @@
+--trusted-host files.pythonhosted.org --trusted-host pypi.org --trusted-host pypi.python.org 
+black~=24.4
+pre-commit~=3.7
+ruff~=0.4
+
