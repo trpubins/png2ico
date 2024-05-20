@@ -27,3 +27,17 @@ This project leverages `pytest` for unit testing. Run the following command to r
 ```bash
 make test
 ```
+
+## Usage
+
+A CLI has been supplied to run the image converter. Using a virtual env with the required packages can be run like so from the project root dir:
+
+```bash
+python src/main.py --png <path-to-png-file> [--output-dir <path-to-output-dir>]
+```
+
+The CLI also includes a help flag to provide more information on available commands.
+
+```bash
+python src/main.py --help
+```
